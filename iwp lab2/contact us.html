@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<title>CONTACT</title>
+</head>
+<body class="backg"><center>
+<script>
+    function validate(){
+    x=document.myform
+    input=x.mno.value
+    if (input.length>10 || input.length<10){
+        alert("The field must contain only 10 characters!")
+        return false
+    }else {
+        return true
+    }
+}
+  </script>
+<h1 id="myHeader">CONTACT US</h1>
+<ul>
+  <li><a class="active" href="mytravelblog.html">Home</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="contact us.html">Contact</a></li>
+</ul><br><br>
+
+<form name="myform" onsubmit="return validate()">
+  <label for="fname">First name: </label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last name: </label>
+  <input type="text" id="lname" name="lname"><br><br>
+
+  <label for="mno">Mobile number: </label>
+  <input type="number" id="mno" name="mno"><br><br>
+  
+  <label for="email">Email ID: </label>
+  <input type="email" id="email" name="email"><br><br>
+  
+  <label for="address">Leave a message </label><br>
+  <textarea id="text" name="address" rows="4" cols="50">
+  </textarea><br><br>
+
+  <input type="submit" value="Submit">
+
+</form></center> 
+
+</body>
+</html>

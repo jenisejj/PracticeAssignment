@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="mystyle.css">
+   <title>MILES TO GO</title>
+</head>
+
+<body class="backg">
+<script type="text/javascript"> 
+var username = prompt("What is your name?");
+var welcome;  
+    var date = new Date();  
+    var hour = date.getHours();  
+    var minute = date.getMinutes();  
+    var second = date.getSeconds();  
+    if (minute < 10) {  
+      minute = "0" + minute;  
+    }  
+    if (second < 10) {  
+      second = "0" + second;  
+    }  
+    if (hour < 12) {  
+      welcome = ", Good morning, ";  
+    } else if (hour < 17) {  
+      welcome = ", Good afternoon, ";  
+    } else {  
+      welcome = ", Good evening, ";  
+    }  
+    alert(username  + welcome + " Welcome to the blog!");  
+    
+
+        var myDate = new Date(); 
+        var myDay = myDate.getDay(); 
+        
+        // Array of days. 
+        var weekday = ['Sunday', 'Monday', 'Tuesday', 
+            'Wednesday', 'Thursday', 'Friday', 'Saturday' 
+        ]; 
+        document.write("Today is : " + weekday[myDay]); 
+        document.write("<br/>"); 
+        
+        // get hour value. 
+        var hours = myDate.getHours(); 
+        var ampm = hours >= 12 ? 'PM' : 'AM'; 
+        hours = hours % 12; 
+        hours = hours ? hours : 12; 
+        var minutes = myDate.getMinutes(); 
+        minutes = minutes < 10 ? '0' + minutes : minutes; 
+        var myTime = hours + " " + ampm + " : " + minutes +  
+            " : " + myDate.getMilliseconds(); 
+        document.write("\tCurrent time is : " + myTime);        
+    </script> 
+<header id="myHeader">MILES TO GO</header>
+<ul>
+  <li><a class="active" href="#banner">Home</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="contact us.html">Contact</a></li>
+</ul><br>
+
+<img src="travel.jpg" alt="Travel" usemap="#workmap">
+<map name="workmap">
+  <area shape="default" alt="Travel" href="blog.html">
+</map>
+
+<section id="banner">
+    <h1>My Travel Blog</h1>
+    <p>Hope to see the world..</p>
+    <a class="btn-bgstroke" href="#myHeader">Back to the Top</a>
+</section>
+
+<br><br>
+<div class="row">
+  <div class="column side">
+    <h2>Contact Info</h2>
+    <p>Contact us at mytravelblog@gmail.com.<br>Feel free to call us at +91 203944 8853.</br></p>
+  </div>
+  <div class="column middle">
+    <h2>Miles to go before I sleep</h2>
+    <p>There are a lot of places I want to visit during my lifetime. Some of these places are given in the blog.</p>
+    <p><span id="city">PARIS</span><br>Paris is positioned at the centre of the Île-de-France region, which is crossed by the Seine, Oise , and Marne rivers. The city is ringed with great forests of beech and oak; they are called the “lungs of Paris,” for they help to purify the air in the heavily industrialized region.</br></p>
+    <p><span id="city">LONDON</span><br>London is the capital and largest city of England and the United Kingdom. Standing on the River Thames in the south-east of England, at the head of its 50-mile (80 km) estuary leading to the North Sea, London has been a major settlement for two millennia.</br></p>
+    <p><span id="city">NEW YORK</span><br>New York City, often called simply New York and abbreviated as NYC, is the most populous city in the United States.With an estimated 2019 population of 8,336,817 distributed over about 302.6 square miles (784 km 2), New York City is also the most densely populated major city in the United States.</br></p>
+  </div>
+  
+  <div class="column side">
+    <h2>About the site</h2>
+    <p> Hope to travel around the world!! Traveling is an extraordinary experience every person needs to try. It reveals a whole new and exciting world out there, opens out your inner strength, and presents with unforgettable adventures. </p><br>
+  </div>
+</div>
+<br><br><center>
+<input id="searchbar" onkeyup="search_kword()" type="text"
+        name="search" placeholder="Search keyword"> 
+<script>
+function search_kword() { 
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('mytravelblog.html'); 
+      
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+} 
+</script><br><br><center>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;margin-left:700px">Subscribe</button>
+</center>
+
+<div id="id01">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form>
+    <div>
+    
+      <br><p>Please fill in this form to subscribe.</p><br>
+     
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="abc@gmail.com" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" minlength="3" maxlength="64" required>
+
+      <label for="phno"><b>Phone Number</b></label>
+      <input type="tel" placeholder="Enter Phone Number" name="phno" pattern="^\d{10}$" required>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+  <script>
+document.getElementById("id01").onsubmit = function() {myFunction1()};
+
+function myFunction1() {
+  alert("You have subscribed successfully");
+}
+</script>
+</div>
+
+<br><br>
+<iframe src="contact us.html" height="200" width="1000" title="Contact Us"></iframe>
+<br><br></center>
+</body>
+</html>
